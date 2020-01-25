@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-
 	// Create public variables for player speed, and for the Text UI game objects
 	public Transform mainCamera;
 	public float speed;
 	public float sprintModeMultiplier;
+	public Text speedText;
 	public Text countText;
 	public Text winText;
 
@@ -40,6 +40,19 @@ public class PlayerController : MonoBehaviour
 	// Each physics step..
 	void FixedUpdate()
 	{
+		OptionA();
+		// OptionB();
+
+		// TODO: Fix the bug - 
+		//		When looking down without setting the .y -> 0, speed uphill is 2.0.
+		//		When looking down with setting the .y -> 0, speed uphill is ~4.4 (even with leverage)
+		//		When looking up		//	//		//	//	//, speed uphill is ~4.5 without leverage, but up to 9.0 with leverage
+		speedText.text = "Velocity" + rb.velocity;
+	}
+
+	void OptionA()
+	{
+		Debug.Log("Option A (TransformDirection)");
 		// Set some local float variables equal to the value of our Horizontal and Vertical Inputs
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
@@ -57,13 +70,31 @@ public class PlayerController : MonoBehaviour
 
 		// Add a physical force to our Player rigidbody using our 'movement' Vector3 above, 
 		// multiplying it by 'speed' - our public player speed that appears in the inspector
-		rb.AddForce(movementCameraDirection * speedToAdd);
+		Debug.Log("Without normalization " + movementCameraDirection);
+		Debug.Log("With normalization " + movementCameraDirection.normalized);
 
-		// TODO: Fix the bug - 
-		//		When looking down without setting the .y -> 0, speed uphill is 2.0.
-		//		When looking down with setting the .y -> 0, speed uphill is ~4.4 (even with leverage)
-		//		When looking up		//	//		//	//	//, speed uphill is ~4.5 without leverage, but up to 9.0 with leverage
-		Debug.Log("Velocity" + rb.velocity);
+		rb.AddForce(movementCameraDirection.normalized * speedToAdd);
+	}
+
+	void OptionB()
+	{
+		Debug.Log("Option B (Cam.forward)");
+		// Set some local float variables equal to the value of our Horizontal and Vertical Inputs
+		float moveHorizontal = Input.GetAxis("Horizontal");
+		float moveVertical = Input.GetAxis("Vertical");
+
+		var mainCamForward = mainCamera.forward;
+		var mainCamRight = mainCamera.right;
+		mainCamForward.y = 0;
+		mainCamRight.y = 0;
+
+		// Debug.Log(mainCamForward);
+		// Debug.Log(mainCamForward);
+
+		bool sprintMode = Input.GetKey(KeyCode.LeftShift);
+		float speedToAdd = sprintMode ? speed * sprintModeMultiplier : speed;
+		rb.AddForce(mainCamForward.normalized * moveVertical * speedToAdd);
+		rb.AddForce(mainCamRight.normalized * moveHorizontal * speedToAdd);
 	}
 
 	// When this game object intersects a collider with 'is trigger' checked, 
