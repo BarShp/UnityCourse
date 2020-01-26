@@ -4,22 +4,43 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform player;
     public float height;
     public float distance;
+    public float cameraSpeedH;
+    public float cameraSpeedV;
+    public Transform player;
 
-    private Vector3 offest;
+    private float yaw;
+    private float pitch;
 
-    // Start is called before the first frame update
+    private Vector3 offset;
+
     void Start()
     {
-        offest = new Vector3(0, height, -distance) - player.transform.position;
+        pitch = transform.eulerAngles.x;
+        yaw = transform.eulerAngles.y;
+        offset = new Vector3(player.position.x, player.position.y + height, player.position.z - distance);
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        transform.position = player.position + offest;
-        transform.LookAt(player);
+        float mouseXAxis = Input.GetAxis("Mouse X");
+        float mouseYAxis = Input.GetAxis("Mouse Y");
+
+        ChangeCameraAngle(mouseXAxis, mouseYAxis);
+        RotateAroundPlayer(mouseXAxis);
+    }
+
+    private void ChangeCameraAngle(float mouseXAxis, float mouseYAxis)
+    {
+        pitch -= cameraSpeedV * mouseYAxis;
+        yaw += cameraSpeedH * mouseXAxis;
+        transform.eulerAngles = new Vector3(Mathf.Clamp(pitch, 10, 55), yaw, 0.0f);
+    }
+
+    private void RotateAroundPlayer(float mouseXAxis)
+    {
+        offset = Quaternion.AngleAxis(mouseXAxis * cameraSpeedH, Vector3.up) * offset;
+        transform.position = player.position + offset;
     }
 }
