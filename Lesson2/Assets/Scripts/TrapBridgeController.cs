@@ -43,22 +43,24 @@ public class TrapBridgeController : MonoBehaviour
         // Debug.DrawRay(partA.position, partA.rotation * Vector3.forward, Color.black);
 
         // TODO: Change edge name to pivot
-        Debug.Log("Edge: " + partAEdge);
-        Debug.Log("Rotation times pivot" + partA.rotation * partAEdge);
-        partA.position += partA.rotation * partAEdge;
+        Debug.Log("partAEdge: " + partAEdge);
+        Debug.Log("Rotation times partAEdge: " + partA.rotation * partAEdge);
+        partA.localPosition += partA.rotation * partAEdge;
         partA.Rotate(5 * Time.deltaTime * Vector3.right);
-        partA.position -= partA.rotation * partAEdge;
+        partA.localPosition -= partA.rotation * partAEdge;
+        // partA.GetComponent<MeshCollider>().transform.position = partA.transform.position;
+        // partA.GetComponent<MeshCollider>().transform.rotation = partA.transform.rotation;
 
-        Debug.DrawRay(partA.position + (partA.rotation * partAEdge), partA.rotation * Vector3.up, Color.green);
-        Debug.DrawRay(partA.position + (partA.rotation * partAEdge), partA.rotation * Vector3.right, Color.red);
-        Debug.DrawRay(partA.position + (partA.rotation * partAEdge), partA.rotation * Vector3.forward, Color.blue);
+        Debug.DrawRay(partA.localPosition + (partA.rotation * partAEdge), partA.rotation * Vector3.up, Color.green);
+        Debug.DrawRay(partA.localPosition + (partA.rotation * partAEdge), partA.rotation * Vector3.right, Color.red);
+        Debug.DrawRay(partA.localPosition + (partA.rotation * partAEdge), partA.rotation * Vector3.forward, Color.blue);
 
-        partB.position += partB.rotation * partBEdge;
+        partB.localPosition += partB.rotation * partBEdge;
         partB.Rotate(5 * Time.deltaTime * Vector3.left);
-        partB.position -= partB.rotation * partBEdge;
+        partB.localPosition -= partB.rotation * partBEdge;
 
-        Debug.DrawRay(partB.position + (partB.rotation * partBEdge), partB.rotation * Vector3.up, Color.green);
-        Debug.DrawRay(partB.position + (partB.rotation * partBEdge), partB.rotation * Vector3.right, Color.red);
-        Debug.DrawRay(partB.position + (partB.rotation * partBEdge), partB.rotation * Vector3.forward, Color.blue);
+        Debug.DrawRay(partB.localPosition + (partB.rotation * partBEdge), partB.rotation * Vector3.up, Color.green);
+        Debug.DrawRay(partB.localPosition + (partB.rotation * partBEdge), partB.rotation * Vector3.right, Color.red);
+        Debug.DrawRay(partB.localPosition + (partB.rotation * partBEdge), partB.rotation * Vector3.forward, Color.blue);
     }
 }

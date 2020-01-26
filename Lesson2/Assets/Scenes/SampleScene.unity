@@ -272,7 +272,7 @@ Transform:
   m_GameObject: {fileID: 246276258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 8.69, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 325083707}
   - {fileID: 1006759529}
@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 325083710}
   - component: {fileID: 325083709}
   - component: {fileID: 325083708}
-  - component: {fileID: 325083711}
   m_Layer: 0
   m_Name: PartA
   m_TagString: Untagged
@@ -385,23 +384,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325083706}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &325083711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325083706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941c80cb5bda5c843a7054fb07a4ef79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pivot: {x: 0, y: 0, z: 0}
-  DebugInfo: 1
-  RotateX: 0
-  RotateY: 0
-  RotateZ: 0
 --- !u!1 &347565824
 GameObject:
   m_ObjectHideFlags: 0
