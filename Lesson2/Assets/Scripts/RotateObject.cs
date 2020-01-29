@@ -63,6 +63,8 @@ public class RotateObject : MonoBehaviour
     private float GetSingleHinge(float size, float localScale, float relativeHingePosition)
     {
         float actualSize = size * localScale;
-        return (relativeHingePosition / 100 * actualSize) - actualSize / 2;
+        float startingEdge = -(actualSize / 2); // position 0 is the middle of the object, so minus half the size is the edge
+        float relativePositionBySize = (relativeHingePosition / 100 * actualSize);
+        return startingEdge + relativePositionBySize;
     }
 }
