@@ -6,31 +6,47 @@ public class RotateObject : MonoBehaviour
 {
     public Vector3 relativeHingePositions = new Vector3(50, 50, 50);
     public Vector3 rotationSpeed = new Vector3(0, 0, 0);
+    public Vector3 initialRotation = new Vector3(0, 0, 0);
 
     private Vector3 pivot;
-    // private Vector3 rotationSide = Vector3.one;
+    private Vector3 rotationMovement;
 
     void Start()
     {
         pivot = GetHingePosition();
-        // Rotate(startingRotation);
+        rotationMovement =
+            (Vector3.forward * rotationSpeed.x) +
+            (Vector3.up * rotationSpeed.y) +
+            (Vector3.left * rotationSpeed.z);
+        Rotate(initialRotation);
     }
 
-    void Update()
+    void OnDrawGizmos()
     {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.right);
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.up);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.forward);
+    }
 
-        // transform.localPosition += transform.rotation * pivot;
-        // transform.Rotate(rotationSide * (reverse ? -1 : 1) * speed * Time.deltaTime);
+    void OnValidate()
+    {
+        // TODO: currently doesn't work on scale change,
+        //          Fix that
+        pivot = GetHingePosition();
+    }
 
+    // Rotates using the rotationMovement
+    public void Rotate(bool reverse = false) => Rotate(rotationMovement * (reverse ? -1 : 1) * Time.deltaTime);
+
+    // Rotates to a given rotation
+    public void Rotate(Vector3 rotation)
+    {
         transform.localPosition += transform.rotation * pivot;
-        transform.Rotate(Vector3.forward * rotationSpeed.x * Time.deltaTime);
-        transform.Rotate(Vector3.up * rotationSpeed.y * Time.deltaTime);
-        transform.Rotate(Vector3.left * rotationSpeed.z * Time.deltaTime);
+        transform.Rotate(rotation);
         transform.localPosition -= transform.rotation * pivot;
-
-        Debug.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.up, Color.green);
-        Debug.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.right, Color.red);
-        Debug.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.forward, Color.blue);
     }
 
     private Vector3 GetHingePosition()
@@ -46,28 +62,7 @@ public class RotateObject : MonoBehaviour
 
     private float GetSingleHinge(float size, float localScale, float relativeHingePosition)
     {
-        // TODO: Make sure it works
-
         float actualSize = size * localScale;
         return (relativeHingePosition / 100 * actualSize) - actualSize / 2;
-    }
-
-    /// <summary>
-    /// Callback to draw gizmos that are pickable and always drawn.
-    /// </summary>
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.up);
-        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.right);
-        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.forward);
-    }
-
-    /// <summary>
-    /// Called when the script is loaded or a value is changed in the
-    /// inspector (Called in the editor only).
-    /// </summary>
-    void OnValidate()
-    {
-        pivot = GetHingePosition();
     }
 }
