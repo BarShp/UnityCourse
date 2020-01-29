@@ -12,7 +12,6 @@ public class CameraController : MonoBehaviour
 
     private float yaw;
     private float pitch;
-
     private Vector3 offset;
 
     void Start()

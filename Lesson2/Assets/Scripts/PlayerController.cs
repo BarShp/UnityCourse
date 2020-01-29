@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float sprintMultiplier;
 
+    private Rigidbody rigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        rigidBody = gameObject.GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -35,6 +37,6 @@ public class PlayerController : MonoBehaviour
         bool sprintMode = Input.GetKey(KeyCode.LeftShift);
         float speedToAdd = sprintMode ? moveSpeed * sprintMultiplier : moveSpeed;
 
-        transform.position += movementCameraDirection.normalized * speedToAdd * Time.deltaTime;
+        rigidBody.MovePosition(rigidBody.position + movementCameraDirection.normalized * speedToAdd * Time.deltaTime);
     }
 }
