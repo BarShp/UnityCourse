@@ -18,10 +18,11 @@ public class CameraController : MonoBehaviour
     {
         pitch = transform.eulerAngles.x;
         yaw = transform.eulerAngles.y;
-        offset = new Vector3(player.position.x, player.position.y + height, player.position.z - distance);
+        transform.position = player.position + new Vector3(0, height, -distance);
+        offset = transform.position - player.position;
     }
 
-    void LateUpdate()
+    void Update()
     {
         float mouseXAxis = Input.GetAxis("Mouse X");
         float mouseYAxis = Input.GetAxis("Mouse Y");

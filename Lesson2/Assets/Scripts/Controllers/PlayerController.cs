@@ -7,18 +7,22 @@ public class PlayerController : MonoBehaviour
     public Transform mainCamera;
     public float moveSpeed;
     public float sprintMultiplier;
+    public float jumpForce;
 
     private Rigidbody rigidBody;
+    private float distToGround;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
+        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     void Update()
     {
         Move();
+        Jump();
     }
 
     private void Move()
@@ -39,4 +43,18 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.MovePosition(rigidBody.position + movementCameraDirection.normalized * speedToAdd * Time.deltaTime);
     }
+
+    private void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+    }
+
 }

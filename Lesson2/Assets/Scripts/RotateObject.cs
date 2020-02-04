@@ -9,26 +9,27 @@ public class RotateObject : MonoBehaviour
     public Vector3 initialRotation = new Vector3(0, 0, 0);
 
     private Vector3 pivot;
+    private Vector3 originalPositon;
     private Vector3 rotationMovement;
 
     void Start()
     {
         pivot = GetHingePosition();
         rotationMovement =
-            (Vector3.forward * rotationSpeed.x) +
+            (Vector3.right * rotationSpeed.x) +
             (Vector3.up * rotationSpeed.y) +
-            (Vector3.left * rotationSpeed.z);
+            (Vector3.forward * rotationSpeed.z);
         Rotate(initialRotation);
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.right);
+        Gizmos.DrawRay(transform.position + (transform.rotation * pivot), transform.rotation * Vector3.right);
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.up);
+        Gizmos.DrawRay(transform.position + (transform.rotation * pivot), transform.rotation * Vector3.up);
         Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.localPosition + (transform.rotation * pivot), transform.rotation * Vector3.forward);
+        Gizmos.DrawRay(transform.position + (transform.rotation * pivot), transform.rotation * Vector3.forward);
     }
 
     void OnValidate()
@@ -36,10 +37,18 @@ public class RotateObject : MonoBehaviour
         // TODO: currently doesn't work on scale change,
         //          Fix that
         pivot = GetHingePosition();
+        originalPositon = transform.position;
     }
 
     // Rotates using the rotationMovement
-    public void Rotate(bool reverse = false) => Rotate(rotationMovement * (reverse ? -1 : 1) * Time.deltaTime);
+    // public void Rotate(bool reverse = false) => Rotate(rotationMovement * (reverse ? -1 : 1) * Time.deltaTime);
+    public void Rotate(bool reverse = false)
+    {
+        // // -- WORKING -- Check this against Rotate()
+        transform.RotateAround(originalPositon + pivot, Vector3.right * (reverse ? -1 : 1), rotationMovement.x * Time.deltaTime);
+        transform.RotateAround(originalPositon + pivot, Vector3.up * (reverse ? -1 : 1), rotationMovement.y * Time.deltaTime);
+        transform.RotateAround(originalPositon + pivot, Vector3.forward * (reverse ? -1 : 1), rotationMovement.z * Time.deltaTime);
+    }
 
     // Rotates to a given rotation
     public void Rotate(Vector3 rotation)
@@ -51,7 +60,7 @@ public class RotateObject : MonoBehaviour
 
     private Vector3 GetHingePosition()
     {
-        var transformSize = transform.GetComponent<MeshFilter>().mesh.bounds.size;
+        var transformSize = transform.GetComponent<MeshFilter>().sharedMesh.bounds.size;
         var transformLocalScale = transform.transform.localScale;
         return new Vector3(
             GetSingleHinge(transformSize.x, transformLocalScale.x, relativeHingePositions.x),
