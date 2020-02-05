@@ -44,6 +44,7 @@ public class RotateObject : MonoBehaviour
     // public void Rotate(bool reverse = false) => Rotate(rotationMovement * (reverse ? -1 : 1) * Time.deltaTime);
     public void Rotate(bool reverse = false)
     {
+        // TODO: for some reason it doesn't work as expected with 2 axises on different speeds
         // // -- WORKING -- Check this against Rotate()
         transform.RotateAround(originalPositon + pivot, Vector3.right * (reverse ? -1 : 1), rotationMovement.x * Time.deltaTime);
         transform.RotateAround(originalPositon + pivot, Vector3.up * (reverse ? -1 : 1), rotationMovement.y * Time.deltaTime);
