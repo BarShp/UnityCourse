@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 2b056c11ff707844297c006bc08b4678
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5328160875219869548
+    second: MeteorShooter
+  - first:
+      213: -688065547937199174
+    second: MeteorShooter_1
+  - first:
+      213: 5707576066286152717
+    second: MeteorShooter_2
+  - first:
+      213: 4558206947424964948
+    second: MeteorShooter_3
+  - first:
+      213: -6537179220670432795
+    second: MeteorShooter_4
+  - first:
+      213: -1998533133183346640
+    second: MeteorShooter_5
+  - first:
+      213: -2029298616168602545
+    second: MeteorShooter_6
+  - first:
+      213: 8202872760044481889
+    second: MeteorShooter_7
+  - first:
+      213: 8515533041089572166
+    second: MeteorShooter_8
+  - first:
+      213: 7185099729348927597
+    second: MeteorShooter_9
+  - first:
+      213: 3082889690002594767
+    second: MeteorShooter_10
+  - first:
+      213: -3018442282160637597
+    second: MeteorShooter_11
+  - first:
+      213: -5675698464531651618
+    second: MeteorShooter_12
+  - first:
+      213: 5396620393712123033
+    second: MeteorShooter_13
+  - first:
+      213: 3081175655674455509
+    second: MeteorShooter_14
+  - first:
+      213: 5185171982902708375
+    second: MeteorShooter_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MeteorShooter
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 927
+        width: 140
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2a946f59dd4a54293cdc300d9b5296
+      internalID: 5328160875219869548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 967
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6fe4a0cfa66ba41a212810aba7a25f
+      internalID: -688065547937199174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 963
+        width: 23
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e76da8eba30474483e3c086c7785aa
+      internalID: 5707576066286152717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 964
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae31669a16cc114a85f8a975a71b061
+      internalID: 4558206947424964948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_4
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 916
+        width: 95
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed35b520101dd5b4dbb45b83726f1ac4
+      internalID: -6537179220670432795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_5
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 916
+        width: 93
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f143db79aeb924469715d3f3ef4e126
+      internalID: -1998533133183346640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_6
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 912
+        width: 96
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d1e079836d6b7a42a53521928b86639
+      internalID: -2029298616168602545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_7
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 914
+        width: 95
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e136c2beca532e42afe8893765b9b15
+      internalID: 8202872760044481889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_8
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 916
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345722fc84cf43740924f868df9bbb55
+      internalID: 8515533041089572166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_9
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 913
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629a6a03df5ffbe4bb518be74f281cb4
+      internalID: 7185099729348927597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_10
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 916
+        width: 98
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328e72b17b8a4a243a233bb1331698f3
+      internalID: 3082889690002594767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 1023
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead55b9efb51e8a43baad838a00438e5
+      internalID: -3018442282160637597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 1023
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca3ef13e2b707c4d90bac69d2b0edbf
+      internalID: -5675698464531651618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 442
+        width: 1023
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804027ea5bafc01408329d17e6c61c57
+      internalID: 5396620393712123033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 101
+        width: 1023
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d00f98aae366414abc68b9ded98065b
+      internalID: 3081175655674455509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorShooter_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1023
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd55f36520aaf154ab90d10e41b8b6a7
+      internalID: 5185171982902708375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
